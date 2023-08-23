@@ -35,4 +35,4 @@ yarn-error.log*
 next-env.d.ts
 
 # weather facade
-/services/WeatherFacade.js
+WeatherFacade.js

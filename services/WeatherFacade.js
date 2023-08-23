@@ -1,6 +1,6 @@
 export default class WeatherFacade {
     static BASE_URL = "http://api.openweathermap.org";
-    static API_KEY = "<YOUR-API-KEY...>";
+    static API_KEY = "<YOUR-API-KEY>";
     static UNITS = "metric";
     static async callGeoLocalisatorXname(name) {
         const response = await fetch(`${this.BASE_URL}/geo/1.0/direct?q=${name}&appid=${this.API_KEY}`);
