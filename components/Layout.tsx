@@ -4,10 +4,12 @@ import CityMain from '@/components/CityMain'
 import WeatherFacade from '../services/WeatherFacade'
 import SearchBox from '@/components/SearchBox';
 import '../public/css/Weather.css';
+import Forecast from './Forecast';
+import AirConditions from './AirConditions';
 
 const Layout = () => {
     const [msg, setMsg] = useState('');
-    const [complete, setComplete] = useState({ current: { city: 0, temp: 0, humidity: 0, weather: [{ main: 0 }] } });
+    const [complete, setComplete] = useState({ hourly: [], current: { city: 0, temp: 0, humidity: 0, weather: [{ main: 0 }] } });
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -36,8 +38,8 @@ const Layout = () => {
             <div className='grow'>
                 <SearchBox parentCallback={handleCallback} />
                 <CityMain city={complete.current} />
-                {/* <Forecast />
-                    <AirConditions /> */}
+                <Forecast city={complete.hourly}/>
+                <AirConditions />
             </div>
             <div>Forecast</div>
         </div>

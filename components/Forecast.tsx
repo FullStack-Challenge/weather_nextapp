@@ -4,24 +4,26 @@ import Utils from '../services/Utils';
 
 function Forecast(props: any) {
     let dates: any = [];
-    for (let i = 0; i < 18; i += 3) {
-        let now = new Date(props.city[i].dt * 1000.0);
-        let imgPath = './img/**.png';
-        let imageType = props.city[i].weather[0].main;
-        imgPath = Utils.getImagePath(imgPath, imageType);
-        let temp = Math.round(props.city[i].temp);
-        dates.push(
-            <div className="row-forecast">
+    if (props.city.length != 0) {
+        for (let i = 0; i < 18; i += 3) {
+            let now = new Date(props.city[i].dt * 1000.0);
+            let imgPath = './img/**.png';
+            let imageType = props.city[i].weather[0].main;
+            imgPath = Utils.getImagePath(imgPath, imageType);
+            let temp = Math.round(props.city[i].temp);
+            dates.push(
+                <div className="row-forecast">
                     <div key={i}>
-                        <p className='paragraph-weather'>{now.toLocaleTimeString().replace(':00','')}</p>
-                        <img 
-                        src={imgPath} alt='weather-img'
-                        className="forecast-img" 
+                        <p className='paragraph-weather'>{now.toLocaleTimeString().replace(':00', '')}</p>
+                        <img
+                            src={imgPath} alt='weather-img'
+                            className="forecast-img"
                         />
                         <p className='paragraph-weather'>{temp}º</p>
                     </div>
-            </div>
-        );
+                </div>
+            );
+        }
     }
     return (
         <div className="rounded-md flex items-center justify-between border-t border-gray-200 bg-white py-3 px-3 my-3 sm:my-4 sm:py-4">
