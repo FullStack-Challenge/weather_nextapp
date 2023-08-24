@@ -16,6 +16,8 @@ export default class Utils {
             break;
             case 'Clear':
                 base = base.replace("**", "sun");
+            case 'Haze':
+                base = base.replace('**', 'wind')
             break;
         }
         return base;

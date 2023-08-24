@@ -13,41 +13,37 @@ const Layout = () => {
     useEffect(() => {
         async function getComplete() {
             setLoading(true);
-            let toCall = '';
-            console.log(!msg)
-            if (!msg) {
-                toCall = 'Bogota'
+            try {
+                const complete = await WeatherFacade.callWeatherXname(msg);
+                setComplete(complete);
+            }catch{
+                console.log('not find', msg)
             }
-            const complete = await WeatherFacade.callWeatherXname(toCall);
-            setComplete(complete);
             setLoading(false);
         }
         getComplete();
-    }, []);
+    }, [msg]);
 
     const handleCallback = (childData: any) => {
         setMsg(childData)
     }
 
 
-    if (!loading) {
-        return (
-            <div className='flex'>
-                <div className="">Sidebar</div>
-                <div className='grow'>
-                    <h1>{msg}</h1>
-                    <SearchBox parentCallback={handleCallback} />
-                    <CityMain city={complete.current} />
-                    {/* <Forecast />
+
+    return (
+        <div className='flex'>
+            <div className="">Sidebar</div>
+            <div className='grow'>
+                <SearchBox parentCallback={handleCallback} />
+                <CityMain city={complete.current} />
+                {/* <Forecast />
                     <AirConditions /> */}
-                </div>
-                <div>Forecast</div>
             </div>
-        )
-    }
-    else {
-        return (<h1>Loading...</h1>)
-    }
+            <div>Forecast</div>
+        </div>
+    )
+
+
 
 }
 
