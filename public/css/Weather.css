@@ -136,3 +136,21 @@ input {
   text-align: center;
   line-height: 100px;
 }
+
+.air-img {
+  width: 4em;
+  margin-right: 10px;
+  filter: opacity(0.5);
+}
+
+.last-air {
+  width: 1000px;
+}
+
+.air-title {
+  color: rgb(150, 150, 150)
+}
+
+.air-value {
+  font-size: xx-large;
+}

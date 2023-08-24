@@ -39,7 +39,7 @@ const Layout = () => {
                 <SearchBox parentCallback={handleCallback} />
                 <CityMain city={complete.current} />
                 <Forecast city={complete.hourly}/>
-                <AirConditions />
+                <AirConditions city={complete.current} />
             </div>
             <div>Forecast</div>
         </div>
