@@ -2,7 +2,7 @@ import React from 'react'
 
 const AirConditions = (props: any) => {
     return (
-        <div className="rounded-md flex items-center justify-between border-t border-gray-200 bg-white py-3 px-3 my-3 sm:my-4 sm:py-4">
+        <div className="rounded-md flex items-center justify-between border-t border-gray-200 bg-slate-200 py-3 px-3 my-3 sm:my-4 sm:py-4">
             <div>
                 <b><h1 className='mt-3 mb-6'>AIR CONDITIONS</h1></b>
                 <div className="grid grid-cols-12 gap-4 items-center justify-between w-full">

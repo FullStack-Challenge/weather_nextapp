@@ -154,3 +154,23 @@ input {
 .air-value {
   font-size: xx-large;
 }
+
+.center {
+  margin:auto;
+  width: 100%;
+}
+
+.week-forecast-img {
+  width: 70%;
+  height: auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.week-forecast-txt {
+  color:rgb(119, 112, 112);
+}
+
+main {
+  background-color: white;
+}

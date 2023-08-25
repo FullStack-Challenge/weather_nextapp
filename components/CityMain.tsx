@@ -9,7 +9,7 @@ const CityMain = (props: any) => {
     imgPath = Utils.getImagePath(imgPath, imageType);
     
     return (
-        <div className=" rounded-md flex items-center justify-between border-t border-gray-200 py-3 my-3 sm:my-4 sm:py-4">
+        <div className=" rounded-md flex items-center justify-between border-t border-gray-200 py-3 my-3 sm:my-4 sm:py-4 bg-white">
             <div className="row">
                 <div className="column">
                     <div className='weather-data'>

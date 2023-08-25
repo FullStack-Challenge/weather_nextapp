@@ -26,11 +26,11 @@ function Forecast(props: any) {
         }
     }
     return (
-        <div className="rounded-md flex items-center justify-between border-t border-gray-200 bg-white py-3 px-3 my-3 sm:my-4 sm:py-4">
+        <div className="rounded-md flex items-center justify-between border-t border-gray-200 bg-slate-200 py-3 px-3 my-3 sm:my-4 sm:py-4">
             <div className="row">
                 <div>
                     <b><h1 className='mt-3 mb-6'>TODAY'S FORECAST</h1></b>
-                    <div className="grid grid-cols-6 gap-6 items-center justify-between divide-x">
+                    <div className="grid grid-cols-6 gap-6 items-center justify-between divide-x divide-slate-950">
                         {dates}
                     </div>
                 </div>

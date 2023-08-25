@@ -6,10 +6,11 @@ import SearchBox from '@/components/SearchBox';
 import '../public/css/Weather.css';
 import Forecast from './Forecast';
 import AirConditions from './AirConditions';
+import CityWeek from './CityWeek';
 
 const Layout = () => {
     const [msg, setMsg] = useState('');
-    const [complete, setComplete] = useState({ hourly: [], current: { city: 0, temp: 0, humidity: 0, weather: [{ main: 0 }] } });
+    const [complete, setComplete] = useState({daily: [], hourly: [], current: { city: 0, temp: 0, humidity: 0, weather: [{ main: 0 }] } });
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -33,15 +34,17 @@ const Layout = () => {
 
 
     return (
-        <div className='flex'>
+        <div className='grid grid-cols-12 py-5 px-5'>
             <div className="">Sidebar</div>
-            <div className='grow'>
+            <div className='col-span-8 mx-4'>
                 <SearchBox parentCallback={handleCallback} />
                 <CityMain city={complete.current} />
                 <Forecast city={complete.hourly}/>
                 <AirConditions city={complete.current} />
             </div>
-            <div>Forecast</div>
+            <div className='col-span-3'>
+                <CityWeek city={complete.daily}/>
+            </div>
         </div>
     )
 

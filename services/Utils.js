@@ -22,4 +22,24 @@ export default class Utils {
         }
         return base;
     }
+
+    static covertNumToWeekDay(num) {
+        switch (num) {
+            case 0:
+                return 'Sun';
+            case 1:
+                return 'Mon';
+            case 2:
+                return 'Tue';
+            case 3:
+                return 'Wed';
+            case 4:
+                return 'Thu';
+            case 5:
+                return 'Fri';
+            case 6:
+                return 'Sat';
+        }
+        return undefined;
+    }
 }
