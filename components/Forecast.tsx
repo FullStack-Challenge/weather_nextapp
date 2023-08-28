@@ -11,6 +11,8 @@ function Forecast(props: any) {
             let imageType = props.city[i].weather[0].main;
             imgPath = Utils.getImagePath(imgPath, imageType);
             let temp = Math.round(props.city[i].temp);
+            let icon = props.city[i].weather[0].icon;
+            imgPath = "http://openweathermap.org/img/w/" + icon + ".png"
             dates.push(
                 <div className="row-forecast">
                     <div key={i}>

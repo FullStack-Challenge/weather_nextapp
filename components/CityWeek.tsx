@@ -13,6 +13,8 @@ const CityWeek = (props: any) => {
             imgPath = Utils.getImagePath(imgPath, imageType);
             let max = Math.round(props.city[i].temp.max);
             let min = Math.round(props.city[i].temp.min);
+            let icon = props.city[i].weather[0].icon;
+            imgPath = "http://openweathermap.org/img/w/" + icon + ".png"
             dates.push(
                 <div className='grid grid-cols-12'>
                     <div className="col-span-4 center week-forecast-txt">{i == 0 ? 'Today' : Utils.covertNumToWeekDay(now.getUTCDay())}</div>
