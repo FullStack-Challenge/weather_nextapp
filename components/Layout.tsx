@@ -7,6 +7,7 @@ import '../public/css/Weather.css';
 import Forecast from './Forecast';
 import AirConditions from './AirConditions';
 import CityWeek from './CityWeek';
+import Sidebar from './Sidebar';
 
 const Layout = () => {
     const [msg, setMsg] = useState('');
@@ -35,7 +36,7 @@ const Layout = () => {
 
     return (
         <div className='grid grid-cols-12 py-5 px-5'>
-            <div className="">Sidebar</div>
+            <div className=""><Sidebar/></div>
             <div className='col-span-8 mx-4'>
                 <SearchBox parentCallback={handleCallback} />
                 <CityMain city={complete.current} />
