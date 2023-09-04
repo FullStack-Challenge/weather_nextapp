@@ -180,3 +180,14 @@ main {
   width: 70%;
   margin-left: 15%;
 }
+
+.weather-logo-secondary {
+  height: 30%;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.text-align-center {
+  text-align: center;
+}
+

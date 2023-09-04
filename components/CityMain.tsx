@@ -8,7 +8,7 @@ const CityMain = (props: any) => {
     let imageType = city.weather[0].main;
     imgPath = Utils.getImagePath(imgPath, imageType);
     let icon = city.weather[0].icon;
-    imgPath = "http://openweathermap.org/img/w/" + icon + ".png"
+    //imgPath = "http://openweathermap.org/img/w/" + icon + ".png"
     return (
         <div className=" rounded-md flex items-center justify-between border-t border-gray-200 py-3 my-3 sm:my-4 sm:py-4 bg-white">
             <div className="row">
